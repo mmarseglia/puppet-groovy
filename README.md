@@ -25,4 +25,4 @@ License
 Support
 -------
 
-Please log issues at our [Projects site](https://github.com/jenkins-infra/puppet-groovy/issues)
+Please log issues at our [Projects site](https://github.com/mmarseglia/puppet-groovy/issues)
