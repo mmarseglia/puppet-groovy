@@ -39,6 +39,10 @@ class groovy (
   staging::extract { $groovy_filename:
     target  => $target,
     creates => $groovy_dir,
-    require => [ Staging::File[$groovy_filename] ],
+    require => [ 
+      Staging::File[$groovy_filename],
+      Package['unzip'],
+      File[$target],
+    ],
   }
 }
