@@ -36,21 +36,9 @@ class groovy (
     timeout => $timeout,
   }
 
-  package { 'unzip':
-    ensure => present,
-  }
-
-  file { $target:
-    ensure => directory,
-  }
-
   staging::extract { $groovy_filename:
     target  => $target,
     creates => $groovy_dir,
-    require => [
-        Staging::File[$groovy_filename],
-        File[$target],
-        Package['unzip'],
-    ],
+    require => [ Staging::File[$groovy_filename] ],
   }
 }
