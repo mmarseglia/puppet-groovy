@@ -4,11 +4,11 @@
 #   - Ubuntu Linux
 #   - Fedora Linux
 #   - Debian Linux
+#   - CentOS Linux
 #
-# === Authors
+# Support puppet versions are:
+#   - Puppet > 2.6.2
 #
-# R. Tyler Croy <tyler@monkeypox.org>
-# Spencer Herzberg <spencer.herzberg@gmail.com>
 #
 class groovy (
   $version  = $groovy::params::version,
@@ -39,7 +39,7 @@ class groovy (
   staging::extract { $groovy_filename:
     target  => $target,
     creates => $groovy_dir,
-    require => [ 
+    require => [
       Staging::File[$groovy_filename],
       Package['unzip'],
       File[$target],
